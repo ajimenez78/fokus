@@ -25,11 +25,14 @@ python fokus.py
    - Intentions are saved to your daily journal
 
 2. **Focus Sessions**
-   - Start a Pomodoro cycle (25 min focus, 5 min break)
-   - Log distractions as they happen
-   - Continue with multiple sessions as needed
+   - Run multiple Pomodoro cycles (25 min focus, 5 min break)
+   - Get sound notifications when sessions end
+   - Log distractions by pressing Enter + 'd'
+   - Track completed pomodoros automatically
+   - Choose to continue or end your focus session
 
 3. **Evening Reflection**
+   - View your daily stats (pomodoros, focus time, distractions)
    - Record up to 3 key achievements from your day
    - Write a brief reflection on your day
    - All data is saved to your journal for future review

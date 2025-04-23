@@ -21,21 +21,48 @@ def start_day():
         "mode": mode,
         "distractions": [],
         "achievements": [],
-        "reflection": ""
+        "reflection": "",
+        "pomodoros_completed": 0
     }
 
     save_data(data)
     print("\n✅ Intentions saved. You've got this!\n")
 
 def run_focus_session():
-    print("🎯 Starting a Pomodoro cycle (25 min focus, 5 min break)...")
-    pomodoro_cycle()
+    exit_loop: bool = False
+    pomodoros_count = 0
+    today = datetime.today().strftime('%Y-%m-%d')
+    
+    while not exit_loop:
+        print("🎯 Starting a Pomodoro cycle (25 min focus, 5 min break)...")
+        pomodoro_cycle()
+        
+        # Update pomodoro count in journal
+        pomodoros_count += 1
+        data = load_data()
+        if today in data:
+            data[today]["pomodoros_completed"] = pomodoros_count
+            save_data(data)
+        
+        print(f"✅ Pomodoro #{pomodoros_count} completed!")
+        user_input = input("Run another Pomodoro cycle? (y/n): ")
+        exit_loop = user_input.lower() == 'n'
 
 def end_day():
-    print("\n🌙 Evening Reflection - Let’s wrap up your day.\n")
+    print("\n🌙 Evening Reflection - Let's wrap up your day.\n")
     today = datetime.today().strftime('%Y-%m-%d')
     data = load_data()
     day_data = data.get(today, {})
+    
+    # Show pomodoro stats
+    pomodoros_completed = day_data.get("pomodoros_completed", 0)
+    total_focus_time = pomodoros_completed * 25  # 25 min per pomodoro
+    
+    print(f"📊 Today's stats:")
+    print(f"- Pomodoros completed: {pomodoros_completed}")
+    print(f"- Total focus time: {total_focus_time} minutes")
+    print(f"- Distractions logged: {len(day_data.get('distractions', []))}")
+    print("")
 
     # Log achievements
     achievements = []
