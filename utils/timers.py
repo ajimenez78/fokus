@@ -1,8 +1,38 @@
 import time
 import sys
 import select
+import os
 from datetime import datetime
 from utils.persistence import load_data, save_data
+
+def play_sound():
+    """Play a notification sound based on platform."""
+    try:
+        if sys.platform == 'win32':
+            # Windows
+            import winsound
+            winsound.Beep(440, 1000)  # 440 Hz for 1 second
+        elif sys.platform == 'darwin':
+            # macOS
+            os.system('afplay /System/Library/Sounds/Tink.aiff')
+        else:
+            # Linux/Unix
+            # Check if any of these commands are available
+            for cmd in ['paplay', 'aplay', 'play']:
+                if os.system(f'which {cmd} > /dev/null 2>&1') == 0:
+                    if cmd == 'paplay':
+                        os.system('paplay /usr/share/sounds/freedesktop/stereo/complete.oga')
+                    elif cmd == 'aplay':
+                        os.system('aplay -q /usr/share/sounds/sound-icons/glass-water-1.wav')
+                    elif cmd == 'play':
+                        os.system('play -q /usr/share/sounds/sound-icons/glass-water-1.wav')
+                    break
+            else:
+                # Fallback: Print bell character
+                print('\a', end='', flush=True)
+    except Exception:
+        # Fallback in case of any issues
+        print('\a', end='', flush=True)
 
 def countdown(minutes, label="Focus"):
     seconds = minutes * 60
@@ -25,6 +55,8 @@ def countdown(minutes, label="Focus"):
             
         time.sleep(1)
 
+    # Play sound notification when timer ends
+    play_sound()
     print(f"\n🔔 {label} session finished.\n")
 
 def check_for_input():
@@ -58,5 +90,7 @@ def log_distraction(msg=None):
 
 def pomodoro_cycle(focus_minutes=25, break_minutes=5):
     countdown(focus_minutes, label="Focus")
+    play_sound()  # Play sound before asking to start break
     input("Press Enter to start your break...")
     countdown(break_minutes, label="Break")
+    play_sound()  # Play sound when break ends too

@@ -56,7 +56,7 @@ fokus/
 
 ## 🔧 Roadmap
 
-- [ ] Pomodoro timer with sound + distraction logger
+- [x] Pomodoro timer with sound + distraction logger
 - [ ] Daily summary & reflection
 - [ ] Stats & history review
 - [ ] Multiple focus modes (sprint, deep blocks)
