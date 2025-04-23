@@ -1,13 +1,20 @@
 {
     "2025-04-23": {
         "intentions": [
-            "Comenzar el h\u00e1bito de trabajar en Stoa",
-            "Tener una versi\u00f3n de Fido2 en Android con SAP CDC",
-            "Comenzar el MVP de agentizaci\u00f3n"
+            "Comenzarr el h\u00e1bito de trabajar en 'Stoa'",
+            "Tener una versi\u00f3n funcional de Fido2 an Android con SAP CDC",
+            "Comenzar mi MVP de agentizaci\u00f3n"
         ],
         "mode": "pomodoro",
-        "distractions": [],
-        "achievements": [],
-        "reflection": ""
+        "distractions": [
+            "Meter mis datos en intervals.icu"
+        ],
+        "achievements": [
+            "He arrancado la primera POC de Stoa. Muy contento con eso",
+            "Algo he avanzado con el tema de Fido, pero mucho menos de lo deseado",
+            "Ni siquierahe empezado el tema de agentizaci\u00f3n. Lo intentoma\u00f1ana. Ponerle foco."
+        ],
+        "reflection": "Es una gran herramienta, pero he de empezar m\u00e1s temprano",
+        "pomodoros_completed": 2
     }
 }
