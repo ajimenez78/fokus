@@ -46,7 +46,7 @@ def run_focus_session():
         
         print(f"✅ Pomodoro #{pomodoros_count} completed!")
         user_input = input("Run another Pomodoro cycle? (y/n): ")
-        exit_loop = user_input.lower() == 'n'
+        exit_loop = user_input.strip().lower().startswith('n')
 
 def end_day():
     print("\n🌙 Evening Reflection - Let's wrap up your day.\n")
