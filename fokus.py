@@ -1,6 +1,7 @@
 import json
 import os
 from datetime import datetime
+from utils.timers import pomodoro_cycle
 
 DATA_FILE = "data/journal.json"
 
@@ -38,5 +39,11 @@ def start_day():
     save_data(data)
     print("\n✅ Intentions saved. You've got this!\n")
 
+def run_focus_session():
+    print("🎯 Starting a Pomodoro cycle (25 min focus, 5 min break)...")
+    pomodoro_cycle()
+
 if __name__ == "__main__":
     start_day()
+    input("Press Enter to begin your first focus session...")
+    run_focus_session()
