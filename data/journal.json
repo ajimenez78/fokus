@@ -16,5 +16,31 @@
         ],
         "reflection": "Es una gran herramienta, pero he de empezar m\u00e1s temprano",
         "pomodoros_completed": 2
+    },
+    "2025-04-24": {
+        "intentions": [
+            "Hacer que funcione el Registro de Fido con SAP CDC",
+            "Establecer un filtro para mis entradas de informaci\u00f3n",
+            "Dedicarle tiempo a mis pet projects"
+        ],
+        "mode": "pomodoro",
+        "distractions": [
+            "Letra de 'Erotika'. Nathy Peluso"
+        ],
+        "achievements": [],
+        "reflection": "",
+        "pomodoros_completed": 6
+    },
+    "2025-04-25": {
+        "intentions": [
+            "Mentalizaci\u00f3n absoluta -75",
+            "Avance Stoa",
+            "Desbloqueo CDC"
+        ],
+        "mode": "pomodoro",
+        "distractions": [],
+        "achievements": [],
+        "reflection": "",
+        "pomodoros_completed": 1
     }
 }

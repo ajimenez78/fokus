@@ -1,0 +1,16 @@
+{
+    "enabled": true,
+    "week": 1,
+    "why": "I want to be more consistent and focused to reach my goals.",
+    "victory_task": "Make your bed",
+    "focus_blocks": 1,
+    "distraction_limit": "Airplane mode during focus block",
+    "daily_log": {
+        "2025-04-25": {
+            "victory_task": false,
+            "focus_blocks_completed": 2,
+            "distraction_limit_respected": false,
+            "notes": ""
+        }
+    }
+}
